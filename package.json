@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "description": "",
   "main": "index.js",
-  "type":  "commonjs",
+  "type":  "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
