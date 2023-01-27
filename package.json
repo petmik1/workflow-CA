@@ -3,6 +3,7 @@
   "version": "1.4.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
@@ -21,7 +22,8 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "cypress": "^12.3.0",
+    "cypress": "^12.4.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",

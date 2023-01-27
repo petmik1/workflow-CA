@@ -1,5 +1,3 @@
-const { type } = require('os')
-
 describe('login fail alert', () => {
   beforeEach(() => {
     cy.visit('/index.html')
@@ -9,9 +7,11 @@ describe('login fail alert', () => {
     cy.get('.modal-footer button[data-auth="login"]').click()
     cy.wait(2000)
     cy.get('#loginEmail')
-      .type('PetMik64782@stud.noroff.no')
-      .should('have.value', 'PetMik64782@stud.noroff.no')
-    cy.get('#loginPassword').type('test').should('have.value', 'test')
+      .type(Cypress.env('USERNAME'))
+      .should('have.value', Cypress.env('USERNAME'))
+    cy.get('#loginPassword')
+      .type('wrongPassword')
+      .should('have.value', 'wrongPassword')
     cy.get(`button[type="submit"]`).contains('Login').click()
     cy.on('window:alert', (str) => {
       expect(str).to.equal(
