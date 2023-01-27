@@ -2,7 +2,9 @@ name: Automated E2E Testing
 on: 
   - pull_request
   - workflow_dispatch
-
+env:
+  CYPRESS_USERNAME: ${{secrets.CYPRESS_USERNAME}}
+  CYPRESS_PASSWORD: ${{secrets.CYPRESS_PASSWORD}}
 jobs:
   run-e2e-tests:
     name: Run E2E Tests
