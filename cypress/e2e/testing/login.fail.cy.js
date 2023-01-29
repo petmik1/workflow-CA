@@ -3,9 +3,9 @@ describe('login fail alert', () => {
     cy.visit('/index.html')
   })
   it('showes a alert when wrong credentials are given', () => {
-    cy.wait(2000)
+    cy.wait(500)
     cy.get('.modal-footer button[data-auth="login"]').click()
-    cy.wait(2000)
+    cy.wait(500)
     cy.get('#loginEmail')
       .type(Cypress.env('USERNAME'))
       .should('have.value', Cypress.env('USERNAME'))
